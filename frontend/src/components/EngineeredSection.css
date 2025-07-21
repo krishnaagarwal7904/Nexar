@@ -1,0 +1,266 @@
+/* EngineeredSection Component Styles */
+/* ================================= */
+
+.engineered-section {
+  padding: 120px 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 30%, #f1f5f9 70%, #e2e8f0 100%);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+  margin-top: -1px;
+}
+
+.engineered-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 70% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 60%),
+    radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.engineered-section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.engineered-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.engineered-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.engineered-text {
+  flex: 1;
+  max-width: 550px;
+}
+
+.engineered-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #3b82f6 60%, #1d4ed8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin-bottom: 0;
+  letter-spacing: -0.02em;
+  animation: titleGlow 4s ease-in-out infinite alternate;
+  position: relative;
+}
+
+.engineered-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+  border-radius: 2px;
+  animation: lineGlow 3s ease-in-out infinite;
+}
+
+@keyframes lineGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  }
+}
+
+/* Ripple Animation Container */
+.ripple-animation {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* N Logo */
+.n-logo {
+  position: relative;
+  z-index: 10;
+  animation: logoFloat 6s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.n-mark {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 16px rgba(59, 130, 246, 0.25));
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 12;
+}
+
+.n-logo:hover .n-mark {
+  transform: scale(1.08);
+  filter: drop-shadow(0 10px 24px rgba(59, 130, 246, 0.4));
+}
+
+/* Ripple Circles */
+.ripple-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2.5px solid rgba(59, 130, 246, 0.25);
+  border-radius: 50%;
+  animation: rippleExpand 6s ease-out infinite;
+}
+
+.ripple-1 {
+  width: 70px;
+  height: 70px;
+  animation-delay: 0s;
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.ripple-2 {
+  width: 70px;
+  height: 70px;
+  animation-delay: 1.2s;
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.ripple-3 {
+  width: 70px;
+  height: 70px;
+  animation-delay: 2.4s;
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.ripple-4 {
+  width: 70px;
+  height: 70px;
+  animation-delay: 3.6s;
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.ripple-5 {
+  width: 70px;
+  height: 70px;
+  animation-delay: 4.8s;
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+/* Animations */
+@keyframes rippleExpand {
+  0% {
+    width: 70px;
+    height: 70px;
+    opacity: 1;
+  }
+  100% {
+    width: 320px;
+    height: 320px;
+    opacity: 0;
+  }
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes titleGlow {
+  0% {
+    filter: drop-shadow(0 0 25px rgba(59, 130, 246, 0.3));
+  }
+  100% {
+    filter: drop-shadow(0 0 35px rgba(59, 130, 246, 0.5));
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .engineered-section {
+    padding: 100px 0;
+  }
+
+  .engineered-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 60px;
+  }
+
+  .engineered-text {
+    max-width: 100%;
+  }
+
+  .engineered-title {
+    font-size: 3rem;
+  }
+
+  .engineered-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .ripple-animation {
+    width: 280px;
+    height: 280px;
+  }
+
+  .n-mark {
+    width: 80px;
+    height: 80px;
+  }
+
+  .ripple-1, .ripple-2, .ripple-3, .ripple-4, .ripple-5 {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+@media (max-width: 480px) {
+  .engineered-container {
+    padding: 0 16px;
+  }
+
+  .engineered-title {
+    font-size: 2.5rem;
+  }
+
+  .ripple-animation {
+    width: 240px;
+    height: 240px;
+  }
+
+  .n-mark {
+    width: 70px;
+    height: 70px;
+  }
+
+  .ripple-1, .ripple-2, .ripple-3, .ripple-4, .ripple-5 {
+    width: 60px;
+    height: 60px;
+  }
+}

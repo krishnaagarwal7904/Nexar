@@ -149,7 +149,7 @@ const HeroSection = () => {
           <div className="floating-block floating-block-4"></div>
           <div className="floating-block floating-block-5"></div>
           <div className="floating-block floating-block-6"></div>
-        </div>
+                </div>
       </div>
 
       {/* Tooltip */}
@@ -167,8 +167,11 @@ const HeroSection = () => {
           {tooltip.text}
         </div>
       )}
+      
+      {/* Transition Element */}
+      <div className="hero-transition"></div>
     </section>
-  );
-};
+            );
+          };
 
 export default HeroSection; 

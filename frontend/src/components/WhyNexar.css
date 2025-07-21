@@ -3,12 +3,13 @@
 
 .why-nexar {
   padding: 100px 0;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
   position: relative;
   overflow: hidden;
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease;
+  margin-top: -1px; /* Ensure no gap */
 }
 
 .why-nexar::before {

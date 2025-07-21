@@ -1,0 +1,415 @@
+/* ContactSales Component Styles */
+/* ============================= */
+
+/* Contact Sales Section */
+.contact-sales {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e2e8f0 100%);
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.contact-sales::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.contact-sales.contact-sales-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-sales-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header Styles */
+.contact-sales-header {
+  text-align: center;
+  margin-bottom: 80px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.contact-sales-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--text-dark) 0%, var(--primary-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.contact-sales-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Content Layout */
+.contact-sales-content {
+  display: flex;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Form Styles */
+.contact-sales-form-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.contact-sales-form {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 56px;
+  box-shadow: 0 20px 60px rgba(10, 10, 31, 0.15);
+  border: 1px solid var(--bg-gray);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.98) 100%);
+}
+
+.contact-sales-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--gradient-primary);
+  border-radius: 20px 20px 0 0;
+}
+
+.contact-sales-form::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Success Message */
+.success-message {
+  background: linear-gradient(135deg, var(--accent-green) 0%, #00a870 100%);
+  color: var(--white);
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 32px;
+  text-align: center;
+  animation: slideInDown 0.5s ease-out;
+}
+
+.success-message h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.success-message p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Form Layout */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.form-group {
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+.required {
+  color: var(--accent-red);
+  font-weight: 700;
+}
+
+/* Input Styles */
+.nexar-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid var(--bg-gray);
+  border-radius: 12px;
+  padding: 18px 20px;
+  color: var(--text-dark);
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-sizing: border-box;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 8px rgba(10, 10, 31, 0.05);
+}
+
+.nexar-input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1), 0 4px 16px rgba(0, 123, 255, 0.15);
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.nexar-input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.nexar-input.error {
+  border-color: var(--accent-red);
+  box-shadow: 0 0 0 4px rgba(255, 59, 48, 0.1), 0 4px 16px rgba(255, 59, 48, 0.1);
+}
+
+.nexar-input.error:focus {
+  border-color: var(--accent-red);
+  box-shadow: 0 0 0 4px rgba(255, 59, 48, 0.15), 0 4px 16px rgba(255, 59, 48, 0.15);
+}
+
+/* Textarea specific styles */
+.nexar-input[rows] {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+/* Select specific styles */
+.nexar-input[as="select"] {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+  appearance: none;
+}
+
+/* Error Messages */
+.error-message {
+  display: block;
+  font-size: 0.875rem;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 20px 32px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 16px;
+  margin-top: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: var(--gradient-primary);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 123, 255, 0.3);
+  letter-spacing: 0.02em;
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 123, 255, 0.5);
+  background: var(--gradient-hover);
+}
+
+.submit-btn:hover::before {
+  left: 100%;
+}
+
+.submit-btn:active {
+  transform: translateY(-2px);
+}
+
+.submit-btn.submitting {
+  background: var(--text-muted);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 4px 12px rgba(107, 114, 128, 0.3);
+}
+
+.submit-btn.submitting::before {
+  display: none;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating Elements */
+.contact-sales::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, var(--blue-tint) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+/* ==================== */
+/* RESPONSIVE DESIGN */
+/* ==================== */
+
+@media (max-width: 1024px) {
+  .contact-sales {
+    padding: 100px 0;
+  }
+  
+  .contact-sales-content {
+    max-width: 700px;
+  }
+  
+  .contact-sales-title {
+    font-size: 3rem;
+  }
+  
+  .contact-sales-form {
+    padding: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-sales {
+    padding: 80px 0;
+  }
+  
+  .contact-sales-container {
+    padding: 0 16px;
+  }
+  
+  .contact-sales-content {
+    max-width: 100%;
+  }
+  
+  .contact-sales-title {
+    font-size: 2.5rem;
+  }
+  
+  .contact-sales-subtitle {
+    font-size: 1.125rem;
+  }
+  
+  .contact-sales-form {
+    padding: 40px 32px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-sales {
+    padding: 60px 0;
+  }
+  
+  .contact-sales-title {
+    font-size: 2rem;
+  }
+  
+  .contact-sales-subtitle {
+    font-size: 1rem;
+  }
+  
+  .contact-sales-form {
+    padding: 32px 24px;
+  }
+  
+  .nexar-input {
+    padding: 16px;
+    font-size: 0.95rem;
+  }
+  
+  .submit-btn {
+    padding: 18px 24px;
+    font-size: 1.1rem;
+  }
+} 

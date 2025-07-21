@@ -4,9 +4,7 @@
 /* Hero Container */
 .hero {
   min-height: 100vh;
-  background: radial-gradient(circle at 80% 40%, var(--blue-tint) 0%, transparent 60%),
-              radial-gradient(circle at 20% 80%, rgba(0, 123, 255, 0.05) 0%, transparent 50%),
-              var(--white);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e2e8f0 100%);
   position: relative;
   overflow: hidden;
   opacity: 0;
@@ -16,6 +14,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 80% 40%, rgba(59, 130, 246, 0.1) 0%, transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .hero.hero-visible {
@@ -874,3 +885,38 @@
     height: 60px;
   }
 } /* Force refresh */
+
+/* Hero to WhyNexar Transition */
+.hero-transition {
+  position: relative;
+  height: 120px;
+  background: linear-gradient(180deg, 
+    #e2e8f0 0%, 
+    #f1f5f9 30%, 
+    #f8fafc 60%, 
+    #f8fafc 100%);
+  overflow: hidden;
+}
+
+.hero-transition::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at center top, rgba(59, 130, 246, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse at center bottom, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-transition::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(180deg, transparent 0%, #f8fafc 100%);
+}
