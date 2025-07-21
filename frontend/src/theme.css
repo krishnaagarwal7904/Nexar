@@ -1,0 +1,209 @@
+/* NEXAR Website Theme */
+/* ==================== */
+
+/* Primary Colors */
+:root {
+  /* Electric Blue (from logo) */
+  --primary-blue: #007BFF;
+  /* For buttons, highlights, links, and illustrations */
+  
+  /* Deep Navy / Charcoal (text) */
+  --text-dark: #0A0A1F;
+  /* For headings, body text, navbar text */
+}
+
+/* Secondary Colors */
+:root {
+  /* Cool Gray (background tint) */
+  --bg-gray: #E6E8F0;
+  /* For section backgrounds, cards, separators */
+  
+  /* Soft Blue Tint (hover/fill) */
+  --blue-tint: #D0E4FF;
+  /* For hover states, card highlights, input fields */
+}
+
+/* Accent Colors */
+:root {
+  /* Fresh Yellow */
+  --accent-yellow: #FFD500;
+  /* For icons, callouts, status alerts (positive), emphasis in illustrations */
+  
+  /* Modern Green */
+  --accent-green: #00C48C;
+  /* For success states, growth indicators, hover transitions */
+  
+  /* Alert Red */
+  --accent-red: #FF3B30;
+  /* For warnings, deletions, error messages */
+}
+
+/* Neutral Colors */
+:root {
+  /* White */
+  --white: #FFFFFF;
+  /* For main background */
+  
+  /* Light Gray */
+  --light-gray: #F5F7FA;
+  /* For subtle backgrounds or card fill */
+  
+  /* Muted Gray Text */
+  --text-muted: #6B7280;
+  /* For secondary text, placeholders */
+}
+
+/* Gradients */
+:root {
+  /* Primary Gradient */
+  --gradient-primary: linear-gradient(135deg, #007BFF 0%, #4D9FFF 100%);
+  
+  /* Hover Gradient */
+  --gradient-hover: linear-gradient(135deg, #0056CC 0%, #3D8FEF 100%);
+}
+
+/* Utility Classes */
+.nexar-primary-bg {
+  background-color: var(--primary-blue);
+}
+
+.nexar-text-dark {
+  color: var(--text-dark);
+}
+
+.nexar-bg-gray {
+  background-color: var(--bg-gray);
+}
+
+.nexar-blue-tint {
+  background-color: var(--blue-tint);
+}
+
+.nexar-accent-yellow {
+  color: var(--accent-yellow);
+}
+
+.nexar-accent-green {
+  color: var(--accent-green);
+}
+
+.nexar-accent-red {
+  color: var(--accent-red);
+}
+
+.nexar-white-bg {
+  background-color: var(--white);
+}
+
+.nexar-light-gray-bg {
+  background-color: var(--light-gray);
+}
+
+.nexar-text-muted {
+  color: var(--text-muted);
+}
+
+.nexar-gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.nexar-gradient-hover {
+  background: var(--gradient-hover);
+}
+
+/* Button Styles */
+.nexar-btn-primary {
+  background: var(--gradient-primary);
+  color: var(--white);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nexar-btn-primary:hover {
+  background: var(--gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.nexar-btn-secondary {
+  background: var(--white);
+  color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nexar-btn-secondary:hover {
+  background: var(--blue-tint);
+  border-color: var(--primary-blue);
+}
+
+/* Card Styles */
+.nexar-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(10, 10, 31, 0.1);
+  border: 1px solid var(--bg-gray);
+}
+
+.nexar-card:hover {
+  box-shadow: 0 4px 16px rgba(10, 10, 31, 0.15);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Text Styles */
+.nexar-heading {
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.nexar-body-text {
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.nexar-secondary-text {
+  color: var(--text-muted);
+}
+
+/* Status Indicators */
+.nexar-success {
+  color: var(--accent-green);
+}
+
+.nexar-warning {
+  color: var(--accent-yellow);
+}
+
+.nexar-error {
+  color: var(--accent-red);
+}
+
+/* Input Styles */
+.nexar-input {
+  background: var(--white);
+  border: 2px solid var(--bg-gray);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: var(--text-dark);
+  transition: border-color 0.3s ease;
+}
+
+.nexar-input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px var(--blue-tint);
+}
+
+.nexar-input::placeholder {
+  color: var(--text-muted);
+} 
