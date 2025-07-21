@@ -1,45 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
+import './HeroSection.css';
 
 const HeroSection = () => {
-  const chartRefs = useRef([]);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
-
-  // Animate graph lines using requestAnimationFrame
-  useEffect(() => {
-    let animationId;
-    let phase = 0;
-
-    const animateGraphs = () => {
-      chartRefs.current.forEach((chartRef, index) => {
-        if (chartRef) {
-          const offset = index * 0.5; // Stagger animation
-          const wavePhase = (phase + offset) % (2 * Math.PI);
-          
-          // Create wave pattern using clip-path
-          const points = [];
-          for (let i = 0; i <= 10; i++) {
-            const x = (i / 10) * 100;
-            const y = 100 - (Math.sin(wavePhase + i * 0.5) * 30 + 50);
-            points.push(`${x}% ${y}%`);
-          }
-          
-          chartRef.style.clipPath = `polygon(0 100%, ${points.join(', ')}, 100% 100%)`;
-        }
-      });
-      
-      phase += 0.02;
-      animationId = requestAnimationFrame(animateGraphs);
-    };
-
-    animateGraphs();
-
-    return () => {
-      if (animationId) {
-        cancelAnimationFrame(animationId);
-      }
-    };
-  }, []);
 
   // Intersection Observer for scroll animations
   useEffect(() => {
@@ -91,72 +55,100 @@ const HeroSection = () => {
   return (
     <section className={`hero ${isVisible ? 'hero-visible' : ''}`} ref={sectionRef}>
       <div className="hero-container">
-        <div className="hero-content">
-          <div className="hero-text">
-            <h1 className="hero-headline">
-              Monitor Everything Effortlessly
-            </h1>
-            <p className="hero-subheadline">
-              From deals to engagement, get real-time metrics in one place.
-            </p>
+        <div className="hero-content-grid">
+          <div className="hero-content">
+            <div className="hero-text">
+              <h1 className="hero-headline">
+                Nexar CRM Platform
+              </h1>
+              <p className="hero-subheadline">
+                A smarter CRM for Professional Service
+              </p>
+              <button className="hero-cta nexar-btn-primary">
+                Get Started
+              </button>
+            </div>
+            <div className="hero-graphic">
+              <img 
+                src="/assests/ChatGPT_Image_Jul_21__2025_at_08_24_52_PM-removebg-preview.png" 
+                alt="Paper airplane flying" 
+                className="paper-airplane-img"
+              />
+            </div>
           </div>
-          <div className="hero-graphic">
-            <div className="rocket-graphic"></div>
-          </div>
-        </div>
-        
-        <div className="hero-illustration">
-          <div className="dashboard-mockup">
-            <div className="dashboard-header">
-              <div className="window-controls">
-                <div className="control-dot"></div>
-                <div className="control-dot"></div>
-                <div className="control-dot"></div>
+          
+                    <div className="hero-illustration">
+            <div className="dashboard-cloud"></div>
+            <div className="dashboard-mockup">
+              <div className="dashboard-header">
+                <div className="window-controls">
+                  <div className="control-dot"></div>
+                  <div className="control-dot"></div>
+                  <div className="control-dot"></div>
+                </div>
+              </div>
+              
+              <div className="dashboard-content">
+                <div className="chart-box">
+                  <div className="chart-graph">
+                    <svg className="chart-wave chart-wave-1" viewBox="0 0 100 20" preserveAspectRatio="none">
+                      <path d="M0,10 Q10,5 20,10 T40,10 T60,10 T80,10 T100,10" />
+                      <path d="M0,12 Q10,7 20,12 T40,12 T60,12 T80,12 T100,12" />
+                      <path d="M0,8 Q10,3 20,8 T40,8 T60,8 T80,8 T100,8" />
+                    </svg>
+                  </div>
+                </div>
+                
+                <div className="stats-row">
+                  {statData.map((stat, index) => (
+                    <div 
+                      key={index}
+                      className={`stat-box ${stat.label.toLowerCase()}-stat`}
+                      onMouseEnter={(e) => handleStatHover(e, stat)}
+                      onMouseLeave={handleStatLeave}
+                    >
+                      <div className="stat-value">{stat.value}</div>
+                      <div className="stat-label">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="chart-box">
+                  <div className="chart-graph">
+                    <svg className="chart-wave chart-wave-2" viewBox="0 0 100 20" preserveAspectRatio="none">
+                      <path d="M0,10 Q15,3 30,10 T50,10 T70,10 T85,10 T100,10" />
+                      <path d="M0,12 Q15,5 30,12 T50,12 T70,12 T85,12 T100,12" />
+                      <path d="M0,8 Q15,1 30,8 T50,8 T70,8 T85,8 T100,8" />
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
             
-            <div className="dashboard-content">
-              <div className="chart-box">
-                <div 
-                  className="chart-graph" 
-                  ref={el => chartRefs.current[0] = el}
-                ></div>
-              </div>
-              
-              <div className="stats-row">
-                {statData.map((stat, index) => (
-                  <div 
-                    key={index}
-                    className={`stat-box ${stat.label.toLowerCase()}-stat`}
-                    onMouseEnter={(e) => handleStatHover(e, stat)}
-                    onMouseLeave={handleStatLeave}
-                  >
-                    <div className="stat-value">{stat.value}</div>
-                    <div className="stat-label">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-              
-              <div className="chart-box">
-                <div 
-                  className="chart-graph" 
-                  ref={el => chartRefs.current[1] = el}
-                ></div>
-              </div>
+            {/* Character PNG - Moved to right */}
+            <div className="character-container">
+              <img 
+                src="/assests/Humaaans_-_Sitting-removebg-preview.png" 
+                alt="Person sitting and working" 
+                className="character-svg"
+              />
             </div>
+            
           </div>
-          
-          <div className="character-illustration">
-            <div className="character">
-              <div className="character-body"></div>
-              <div className="character-laptop"></div>
-            </div>
-          </div>
-          
-          <div className="background-shapes">
-            <div className="shape shape-1"></div>
-            <div className="shape shape-2"></div>
-          </div>
+        </div>
+        
+        {/* Floating Blocks - Moved to hero container */}
+        <div className="background-shapes">
+          <div className="shape shape-1"></div>
+          <div className="shape shape-2"></div>
+          <div className="shape shape-3"></div>
+          <div className="shape shape-4"></div>
+          <div className="floating-block floating-block-1"></div>
+          <div className="floating-block floating-block-2"></div>
+          <div className="floating-block floating-block-3"></div>
+          <div className="floating-block floating-block-4"></div>
+          <div className="floating-block floating-block-5"></div>
+          <div className="floating-block floating-block-6"></div>
         </div>
       </div>
 
