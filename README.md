@@ -1,5 +1,4 @@
-<img width="1512" height="982" alt="Screenshot 2025-08-28 at 9 28 38 pm" src="https://github.com/user-attachments/assets/fcc9eb13-1540-48d8-b7f9-ab92acac7df5" /><img width="1512" height="982" alt="Screenshot 2025-08-28 at 9 28 14 pm" src="https://github.com/user-attachments/assets/d1b3106c-a6ee-4a16-88f0-5326bc5f9645" /># Nexar!
-[Uploading Screenshot 2025-08-28 at 9.28.14 pm.png…]()
+<img width="1512" height="982" alt="Screenshot 2025-08-28 at 9 28 14 pm" src="https://github.com/user-attachments/assets/d1b3106c-a6ee-4a16-88f0-5326bc5f9645" />
 
 
 <img width="1512" height="982" alt="Screenshot 2025-08-28 at 9 28 24 pm" src="https://github.com/user-attachments/assets/24ee3f8d-7ff8-4c98-8e1b-a7a01ef87f84" />
